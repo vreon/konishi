@@ -6,5 +6,5 @@ resources:
 namespace: private-ingress-nginx
 namePrefix: private-
 patchesStrategicMerge:
-- set-ingress-class.yaml
+- set-args.yaml
 - set-hostport.yaml
