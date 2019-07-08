@@ -6,5 +6,5 @@ resources:
 namespace: public-ingress-nginx
 namePrefix: public-
 patchesStrategicMerge:
-- set-ingress-class.yaml
+- set-args.yaml
 - set-replicas.yaml
