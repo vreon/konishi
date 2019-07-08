@@ -9,3 +9,4 @@ echo '---'; kz3 build cluster/ingress/private
 echo '---'; kz3 build cluster/ingress/public
 echo '---'; kz3 build cluster/network
 echo '---'; kz3 build cluster/storage
+echo '---'; kz3 build cluster/tls

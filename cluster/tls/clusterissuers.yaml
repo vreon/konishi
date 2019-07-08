@@ -1,0 +1,33 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-staging
+spec:
+  acme:
+    email: jesse@thefortytwo.net
+    privateKeySecretRef:
+      name: letsencrypt-staging-account-key
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    solvers:
+    - dns01:
+        route53:
+          hostedZoneID: ZRG8Y2Q0YASZ9
+          region: us-west-2
+      selector: {}
+---
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    email: jesse@thefortytwo.net
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-prod-account-key
+    solvers:
+    - dns01:
+        route53:
+          hostedZoneID: ZRG8Y2Q0YASZ9
+          region: us-west-2
+      selector: {}
