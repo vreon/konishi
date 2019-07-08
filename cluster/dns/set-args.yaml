@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: external-dns
+spec:
+  template:
+    spec:
+      containers:
+      - name: external-dns
+        args:
+        - --source=ingress
+        - --domain-filter=vreon.net
+        - --provider=aws
+        - --registry=txt
+        - --txt-owner-id=konishi
