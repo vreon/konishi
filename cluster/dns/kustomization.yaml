@@ -10,4 +10,5 @@ secretGenerator:
   type: Opaque
 patchesStrategicMerge:
 - set-secrets.yaml
+- set-args.yaml
 namespace: external-dns
