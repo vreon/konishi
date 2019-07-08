@@ -4,9 +4,9 @@
 
 set -e
 
-echo '---'; kz3 build cluster/dns
-echo '---'; kz3 build cluster/ingress/private
-echo '---'; kz3 build cluster/ingress/public
-echo '---'; kz3 build cluster/network
-echo '---'; kz3 build cluster/storage
-echo '---'; kz3 build cluster/tls
+echo '---'; kz3 build infra/dns
+echo '---'; kz3 build infra/ingress/private
+echo '---'; kz3 build infra/ingress/public
+echo '---'; kz3 build infra/network
+echo '---'; kz3 build infra/storage
+echo '---'; kz3 build infra/tls
