@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 curl -s https://raw.githubusercontent.com/kubernetes-incubator/external-dns/v0.5.15/docs/tutorials/aws.md | \
     sed -n '101,161p' \
     > external-dns.yaml
