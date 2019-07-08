@@ -1,12 +1,25 @@
 # konishi
 
-Configuration for my home cluster.
+Configuration for my home Kubernetes cluster.
+
+Requires [kustomize](https://github.com/kubernetes-sigs/kustomize) v3.x on the path as `kz3`.
 
 ## Usage
 
-```bash
-./generate.sh  # Generate manifests from versioned upstream resources
-./build.sh | kubectl apply -f -  # Update cluster resources
+```sh
+./generate.sh
+./build.sh | kubectl apply -f -
 ```
 
-Requires [kustomize](https://github.com/kubernetes-sigs/kustomize) v3.x on the path as `kz3`.
+## Structure
+
+```
+.
+├── build.sh     # Wraps `kustomize build` to fix a conflict bug
+├── clean.sh     # Deletes generated upstream manifests
+├── generate.sh  # Generates bases for all upstream projects
+├── infra        # Contains overlays for basic cluster services
+├── README.md    # This file
+├── tests        # Contains misc. manifests for smoke testing
+└── upstream     # Contains base-generator scripts for upstream projects
+```
