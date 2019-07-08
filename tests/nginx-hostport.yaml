@@ -1,0 +1,20 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: nginx-hostport
+spec:
+  selector:
+    matchLabels:
+      app: nginx-hostport
+  template:
+    metadata:
+      labels:
+        app: nginx-hostport
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1
+        ports:
+        - name: http
+          containerPort: 80
+          hostPort: 81
