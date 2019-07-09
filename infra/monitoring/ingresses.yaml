@@ -1,0 +1,50 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: grafana
+  namespace: monitoring
+  annotations:
+    kubernetes.io/ingress.class: private
+spec:
+  rules:
+  - host: grafana.home.vreon.net
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: grafana
+          servicePort: http
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: prometheus-k8s
+  namespace: monitoring
+  annotations:
+    kubernetes.io/ingress.class: private
+spec:
+  rules:
+  - host: prometheus.home.vreon.net
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: prometheus-k8s
+          servicePort: web
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: alertmanager-main
+  namespace: monitoring
+  annotations:
+    kubernetes.io/ingress.class: private
+spec:
+  rules:
+  - host: alertmanager.home.vreon.net
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: alertmanager-main
+          servicePort: web

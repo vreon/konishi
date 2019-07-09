@@ -4,9 +4,15 @@
 
 set -e
 
-echo '---'; kz3 build infra/dns
-echo '---'; kz3 build infra/ingress/private
-echo '---'; kz3 build infra/ingress/public
-echo '---'; kz3 build infra/network
-echo '---'; kz3 build infra/storage
-echo '---'; kz3 build infra/tls
+for overlay in \
+    infra/dns \
+    infra/ingress/private \
+    infra/ingress/public \
+    infra/monitoring \
+    infra/network \
+    infra/storage \
+    infra/tls \
+; do
+    echo '---'
+    kz3 build $overlay
+done
