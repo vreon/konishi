@@ -10,6 +10,7 @@ for overlay in \
     infra/ingress/public \
     infra/monitoring \
     infra/network \
+    infra/registry \
     infra/storage \
     infra/tls \
 ; do
