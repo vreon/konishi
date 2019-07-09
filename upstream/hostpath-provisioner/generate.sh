@@ -10,5 +10,5 @@ helm template -n hostpath-provisioner hostpath-provisioner > hostpath-provisione
 rm -rf hostpath-provisioner
 
 touch kustomization.yaml
-kz3 edit add resource hostpath-provisioner.yaml
-kz3 edit set namespace kube-system  # Argument to `helm template` didn't seem to work
+kustomize edit add resource hostpath-provisioner.yaml
+kustomize edit set namespace kube-system  # Argument to `helm template` didn't seem to work

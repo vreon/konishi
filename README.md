@@ -2,7 +2,7 @@
 
 Configuration for my home Kubernetes cluster.
 
-Requires [kustomize](https://github.com/kubernetes-sigs/kustomize) v3.x on the path as `kz3`.
+Requires [kustomize](https://github.com/kubernetes-sigs/kustomize) v3.
 
 ## Usage
 

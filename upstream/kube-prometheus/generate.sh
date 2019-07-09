@@ -17,4 +17,4 @@ git -C kube-prometheus reset --hard a5ba4c5116af3a43215a41ed1d9da7a805537067
 rm -rf kube-prometheus
 
 touch kustomization.yaml
-kz3 edit add resource kube-prometheus.yaml
+kustomize edit add resource kube-prometheus.yaml

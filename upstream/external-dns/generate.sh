@@ -7,5 +7,5 @@ curl -s https://raw.githubusercontent.com/kubernetes-incubator/external-dns/v0.5
     > external-dns.yaml
 
 touch kustomization.yaml
-kz3 edit add resource external-dns.yaml
-kz3 edit set image registry.opensource.zalan.do/teapot/external-dns:v0.5.15
+kustomize edit add resource external-dns.yaml
+kustomize edit set image registry.opensource.zalan.do/teapot/external-dns:v0.5.15

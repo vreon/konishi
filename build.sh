@@ -14,5 +14,5 @@ for overlay in \
     infra/tls \
 ; do
     echo '---'
-    kz3 build $overlay
+    kustomize build $overlay
 done
