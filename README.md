@@ -1,4 +1,12 @@
-# konishi
+```
+_|                            _|            _|        _|
+_|  _|      _|_|    _|_|_|          _|_|_|  _|_|_|
+_|_|      _|    _|  _|    _|  _|  _|_|      _|    _|  _|
+_|  _|    _|    _|  _|    _|  _|      _|_|  _|    _|  _|
+_|    _|    _|_|    _|    _|  _|  _|_|_|    _|    _|  _|
+
+              Welcome to Konishi, Citizen.
+```
 
 Configuration for my home Kubernetes cluster.
 
