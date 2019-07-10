@@ -11,6 +11,7 @@ for overlay in \
     infra/monitoring \
     infra/network \
     infra/registry \
+    infra/serverless \
     infra/storage \
     infra/tls \
 ; do

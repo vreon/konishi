@@ -6,5 +6,6 @@ resources:
 - monitoring
 - network
 - registry
+- serverless
 - storage
 - tls
