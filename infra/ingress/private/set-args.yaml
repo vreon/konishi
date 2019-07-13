@@ -9,9 +9,9 @@ spec:
       containers:
       - args:
         - /nginx-ingress-controller
-        - --configmap=$(POD_NAMESPACE)/nginx-configuration
-        - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
-        - --udp-services-configmap=$(POD_NAMESPACE)/udp-services
+        - --configmap=$(POD_NAMESPACE)/private-nginx-configuration
+        - --tcp-services-configmap=$(POD_NAMESPACE)/private-tcp-services
+        - --udp-services-configmap=$(POD_NAMESPACE)/private-udp-services
         - --annotations-prefix=nginx.ingress.kubernetes.io
         - --ingress-class=private
         - --report-node-internal-ip-address
