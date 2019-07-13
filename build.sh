@@ -8,6 +8,7 @@ for overlay in \
     infra/dns \
     infra/ingress/private \
     infra/ingress/public \
+    infra/logging \
     infra/monitoring \
     infra/network \
     infra/registry \

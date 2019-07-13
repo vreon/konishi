@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - dns
 - ingress
+- logging
 - monitoring
 - network
 - registry
