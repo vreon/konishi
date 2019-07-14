@@ -1,0 +1,6 @@
+# Workaround for presence of valueFrom in the base
+- op: replace
+  path: /spec/template/spec/containers/0/env/0/value
+  value: "*"
+- op: remove
+  path: /spec/template/spec/containers/0/env/0/valueFrom

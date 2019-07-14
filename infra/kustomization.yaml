@@ -9,4 +9,5 @@ resources:
 - registry
 - serverless
 - storage
+- streams
 - tls
