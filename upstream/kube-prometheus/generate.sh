@@ -2,7 +2,7 @@
 
 set -e
 
-[ -d kube-prometheus ] || git clone --depth 1 https://github.com/coreos/kube-prometheus
+[ -d kube-prometheus ] || git clone https://github.com/coreos/kube-prometheus
 git -C kube-prometheus reset --hard a5ba4c5116af3a43215a41ed1d9da7a805537067
 
 (
