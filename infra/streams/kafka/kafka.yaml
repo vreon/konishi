@@ -9,6 +9,19 @@ spec:
     listeners:
       plain: {}
       tls: {}
+      external:
+        type: nodeport
+        tls: false
+        overrides:
+          bootstrap:
+            nodePort: 31043
+          brokers:
+          - broker: 0
+            nodePort: 30539
+          - broker: 1
+            nodePort: 31537
+          - broker: 2
+            nodePort: 31483
     config:
       offsets.topic.replication.factor: 3
       transaction.state.log.replication.factor: 3
