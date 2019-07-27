@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sms-sender
+spec:
+  template:
+    spec:
+      containers:
+      - name: sms-sender
+        image: vcr.vreon.net/private/agent-sms-sender
+        envFrom:
+        - secretRef:
+            name: sms-sender

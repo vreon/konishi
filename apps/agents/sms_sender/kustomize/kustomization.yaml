@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: agents
+commonLabels:
+  agent: sms-sender
+secretGenerator:
+- envs:
+  - secrets.env
+  name: sms-sender
+  type: Opaque
+resources:
+- deployment.yaml
