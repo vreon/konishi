@@ -6,3 +6,6 @@ resources:
 - ../../upstream/kube-prometheus
 - ingresses.yaml
 - grafana-pvc.yaml
+images:
+- name: grafana/grafana
+  newTag: 6.3.2
