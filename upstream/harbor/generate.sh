@@ -5,7 +5,7 @@ set -e
 helm repo add harbor https://helm.goharbor.io
 helm repo update
 
-helm fetch harbor/harbor --version 1.1.0 --untar
+helm fetch harbor/harbor --version 1.2.0 --untar
 helm template -n harbor -f - \
     --set chartmuseum.enabled=false \
     --set clair.enabled=false \
