@@ -23,7 +23,7 @@ helm template -n harbor -f - \
 expose:
   ingress:
     annotations:
-      certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+      cert-manager.io/cluster-issuer: letsencrypt-prod
       kubernetes.io/ingress.class: public
 EOF
 
