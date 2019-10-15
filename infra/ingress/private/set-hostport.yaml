@@ -4,6 +4,8 @@ metadata:
   name: nginx-ingress-controller
   namespace: ingress-nginx
 spec:
+  strategy:
+    type: Recreate
   template:
     spec:
       containers:
