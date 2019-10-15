@@ -10,11 +10,10 @@ _|    _|    _|_|    _|    _|  _|  _|_|_|    _|    _|  _|
 
 Configuration for my home Kubernetes cluster.
 
-Requires [kustomize](https://github.com/kubernetes-sigs/kustomize) v3.0.2.
-
 ## Usage
 
 ```sh
+asdf install
 ./generate.sh
 kustomize build | kubectl apply -f -
 ```
@@ -23,11 +22,13 @@ kustomize build | kubectl apply -f -
 
 ```
 .
+├── .tool-versions      # Required versions of tools (for asdf-vm)
+├── apps                # Code and manifests for misc. in-cluster apps
 ├── clean.sh            # Deletes generated upstream manifests
 ├── generate.sh         # Generates bases for all upstream projects
-├── infra               # Contains overlays for basic cluster services
+├── infra               # Overlays for basic cluster services
 ├── kustomization.yaml  # Kustomization for entire cluster
 ├── README.md           # This file
-├── tests               # Contains misc. manifests for smoke testing
-└── upstream            # Contains base-generator scripts for upstream projects
+├── tests               # Manifests for smoke testing
+└── upstream            # Base-generator scripts for upstream projects
 ```
