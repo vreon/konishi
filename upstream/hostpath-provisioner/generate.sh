@@ -6,7 +6,9 @@ helm repo add rimusz https://charts.rimusz.net
 helm repo update
 
 helm fetch rimusz/hostpath-provisioner --version 0.2.3 --untar
-helm template -n hostpath-provisioner hostpath-provisioner > hostpath-provisioner.yaml
+helm template -n hostpath-provisioner hostpath-provisioner | \
+    sed 's/apps\/v1beta2/apps\/v1/' \
+    > hostpath-provisioner.yaml
 rm -rf hostpath-provisioner
 
 touch kustomization.yaml
