@@ -1,3 +1,4 @@
+apps
 *secrets.env
 secrets/
 upstream/**/*.yaml
