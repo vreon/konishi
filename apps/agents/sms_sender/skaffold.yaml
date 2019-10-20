@@ -1,8 +1,0 @@
-apiVersion: skaffold/v1beta13
-kind: Config
-build:
-  artifacts:
-  - image: vcr.vreon.net/private/agent-sms-sender
-deploy:
-  kustomize:
-    path: kustomize

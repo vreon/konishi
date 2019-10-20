@@ -23,7 +23,6 @@ kustomize build | kubectl apply -f -
 ```
 .
 ├── .tool-versions      # Required versions of tools (for asdf-vm)
-├── apps                # Code and manifests for misc. in-cluster apps
 ├── clean.sh            # Deletes generated upstream manifests
 ├── generate.sh         # Generates bases for all upstream projects
 ├── infra               # Overlays for basic cluster services
