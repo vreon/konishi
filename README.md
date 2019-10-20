@@ -18,6 +18,15 @@ asdf install
 kustomize build cluster | kubectl apply -f -
 ```
 
+##### Checking for updates
+
+Requires [nvchecker](https://github.com/lilydjwg/nvchecker).
+
+```
+nvchecker versions/config.ini      # Check for new versions
+nvtake versions/config.ini <name>  # Mark <name> as updated
+```
+
 ## Structure
 
 ```
@@ -28,5 +37,6 @@ kustomize build cluster | kubectl apply -f -
 ├── cluster             # Overlay for entire cluster
 ├── README.md           # This file
 ├── tests               # Manifests for smoke testing
-└── upstream            # Base-generator scripts for upstream projects
+├── upstream            # Base-generator scripts for upstream projects
+└── versions            # Tracks versions of upstream projects
 ```
