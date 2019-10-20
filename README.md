@@ -18,7 +18,7 @@ asdf install
 kustomize build cluster | kubectl apply -f -
 ```
 
-##### Checking for updates
+#### Checking for updates
 
 Requires [nvchecker](https://github.com/lilydjwg/nvchecker).
 
