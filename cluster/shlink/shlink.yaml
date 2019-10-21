@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: shlink
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shlink
+  serviceName: shlink-headless
+  template:
+    metadata:
+      labels:
+        app: shlink
+    spec:
+      containers:
+      - image: shlinkio/shlink:1.19.0
+        name: shlink
+        command:
+        - sh
+        - -c
+        - touch /data/database.sqlite && ln -s /data/database.sqlite data/ && exec /bin/sh ./docker-entrypoint.sh
+        env:
+        - name: SHORT_DOMAIN_HOST
+          value: go.vreon.net
+        - name: SHORT_DOMAIN_SCHEMA
+          value: https
+        ports:
+        - containerPort: 8080
+          name: http
+        volumeMounts:
+        - mountPath: /data
+          name: data
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shlink-headless
+spec:
+  clusterIP: None
+  selector:
+    app: shlink
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shlink
+spec:
+  ports:
+  - port: 80
+    name: http
+    targetPort: http
+  selector:
+    app: shlink
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: public
+  name: shlink
+spec:
+  rules:
+  - host: go.vreon.net
+    http:
+      paths:
+      - backend:
+          serviceName: shlink
+          servicePort: 80
+        path: /
+  tls:
+  - hosts:
+    - go.vreon.net
+    secretName: shlink-tls

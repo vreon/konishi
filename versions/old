@@ -7,3 +7,4 @@ kubeless v1.0.5
 kube-prometheus 20191016.133829
 kubernetes v1.16.2
 loki v0.3.0
+shlink v1.19.0

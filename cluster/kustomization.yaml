@@ -10,3 +10,4 @@ resources:
 - kubeless
 - local-path-provisioner
 - loki
+- shlink
