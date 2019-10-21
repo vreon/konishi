@@ -5,5 +5,5 @@ harbor-helm v1.2.1
 ingress-nginx nginx-0.26.1
 kubeless v1.0.5
 kube-prometheus 20191016.133829
-kubernetes v1.16.1
+kubernetes v1.16.2
 loki v0.3.0
