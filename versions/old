@@ -1,7 +1,7 @@
 calico v3.10.0
 cert-manager v0.11.0
 external-dns v0.5.17
-harbor-helm v1.2.0
+harbor-helm v1.2.1
 ingress-nginx nginx-0.26.1
 kubeless v1.0.5
 kube-prometheus 20191016.133829
