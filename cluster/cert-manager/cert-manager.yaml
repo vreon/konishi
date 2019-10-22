@@ -1,0 +1,7 @@
+apiVersion: platform.discogs.com/v1
+kind: HTTPGenerator
+metadata:
+  name: cert-manager
+resources:
+- url: https://github.com/jetstack/cert-manager/releases/download/v0.11.0/cert-manager.yaml
+  integrity: sha384-7gQxrneW8F+y0iHSzONZwjo8zSuTKiH/wIi/VS5SY5tWJVLcdeCSML7odhfEjN4a

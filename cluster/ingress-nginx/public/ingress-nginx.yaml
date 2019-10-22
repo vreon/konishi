@@ -1,0 +1,7 @@
+apiVersion: platform.discogs.com/v1
+kind: HTTPGenerator
+metadata:
+  name: ingress-nginx
+resources:
+- url: https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.26.1/deploy/static/mandatory.yaml
+  integrity: sha384-GBrDTpfbwaTeqPBjxKGqy13IcrFomhCBixCigXHPEFO6JpFzXS2CbN7aZLMf9Vs4

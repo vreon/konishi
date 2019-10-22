@@ -1,0 +1,10 @@
+apiVersion: platform.discogs.com/v1
+kind: HelmChartGenerator
+metadata:
+  name: promtail
+spec:
+  chart: loki/promtail
+  version: 0.12.3
+  values:
+    loki:
+      serviceName: loki

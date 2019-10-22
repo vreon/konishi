@@ -1,0 +1,7 @@
+apiVersion: platform.discogs.com/v1
+kind: HelmChartGenerator
+metadata:
+  name: loki
+spec:
+  chart: loki/loki
+  version: 0.16.0

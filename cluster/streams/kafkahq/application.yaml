@@ -1,5 +1,0 @@
-kafkahq:
-  connections:
-    kafka:
-      properties:
-        bootstrap.servers: kafka-kafka-bootstrap:9092

@@ -1,0 +1,36 @@
+apiVersion: platform.discogs.com/v1
+kind: HelmChartGenerator
+metadata:
+  name: harbor
+spec:
+  chart: harbor/harbor
+  version: 1.2.1
+  values:
+    chartmuseum:
+      enabled: false
+    clair:
+      enabled: false
+    core:
+      secret: $(envfile://secrets.env#CORE_SECRET)
+    expose:
+      ingress:
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-prod
+          kubernetes.io/ingress.class: public
+        hosts:
+          core: vcr.vreon.net
+      tls:
+        secretName: harbor-tls
+    externalURL: https://vcr.vreon.net
+    harborAdminPassword: $(envfile://secrets.env#HARBOR_ADMIN_PASSWORD)
+    jobservice:
+      secret: $(envfile://secrets.env#JOBSERVICE_SECRET)
+    notary:
+      enabled: false
+    persistence:
+      persistentVolumeClaim:
+        registry:
+          size: 20Gi
+    registry:
+      secret: $(envfile://secrets.env#REGISTRY_SECRET)
+    secretKey: $(envfile://secrets.env#SECRET_KEY)

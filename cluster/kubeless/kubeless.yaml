@@ -1,0 +1,7 @@
+apiVersion: platform.discogs.com/v1
+kind: HTTPGenerator
+metadata:
+  name: kubeless
+resources:
+- url: https://github.com/kubeless/kubeless/releases/download/v1.0.5/kubeless-v1.0.5.yaml
+  integrity: sha384-/EtUIMoAEtrFXYINji2dlk2Hh2J9wQPUQ08dSQ5ocqLMAzU/WFXThW9Qc0SkUOIs

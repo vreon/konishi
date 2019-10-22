@@ -1,0 +1,7 @@
+apiVersion: platform.discogs.com/v1
+kind: HTTPGenerator
+metadata:
+  name: calico
+resources:
+- url: https://docs.projectcalico.org/v3.10/manifests/calico.yaml
+  integrity: sha384-rPa2FbjIL5YlY7sCvycTmDgCcz9YZjHV40tGtn+azvcAKH5IxIcxxDvpN0B1Pc1W

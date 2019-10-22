@@ -1,7 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+generators:
+- ingress-nginx.yaml
 resources:
-- ../../../upstream/ingress-nginx
 - leader-election-role.yaml
 - service-nodeport.yaml
 namespace: public-ingress-nginx

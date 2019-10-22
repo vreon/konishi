@@ -12,10 +12,13 @@ Configuration for my home Kubernetes cluster.
 
 ## Usage
 
+Requires several unreleased kustomize plugins (for now you can look at the
+generators at least :eyes:).
+
 ```sh
 asdf install
-./generate.sh
-kustomize build cluster | kubectl apply -f -
+./setup.sh
+kustomize build --enable_alpha_plugins cluster | kubectl apply -f -
 ```
 
 #### Checking for updates
@@ -32,11 +35,9 @@ nvtake versions/config.ini <name>  # Mark <name> as updated
 ```
 .
 ├── .tool-versions      # Required versions of tools (for asdf-vm)
-├── clean.sh            # Deletes generated upstream manifests
-├── generate.sh         # Generates bases for all upstream projects
 ├── cluster             # Overlay for entire cluster
 ├── README.md           # This file
+├── setup.sh            # Configure Helm
 ├── tests               # Manifests for smoke testing
-├── upstream            # Base-generator scripts for upstream projects
 └── versions            # Tracks versions of upstream projects
 ```
