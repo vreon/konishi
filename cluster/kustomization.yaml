@@ -10,4 +10,5 @@ resources:
 - kubeless
 - local-path-provisioner
 - loki
+- minio
 - shlink

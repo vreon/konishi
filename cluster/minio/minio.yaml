@@ -1,0 +1,21 @@
+apiVersion: platform.discogs.com/v1
+kind: HelmChartGenerator
+metadata:
+  name: minio
+spec:
+  chart: stable/minio
+  version: 2.5.16
+  values:
+    accessKey: $(envfile://secrets.env#ACCESS_KEY)
+    secretKey: $(envfile://secrets.env#SECRET_KEY)
+    ingress:
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        kubernetes.io/ingress.class: public
+      enabled: true
+      hosts:
+      - obj.vreon.net
+      tls:
+      - hosts:
+        - obj.vreon.net
+        secretName: minio-tls
