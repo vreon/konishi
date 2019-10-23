@@ -12,6 +12,7 @@ spec:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
         kubernetes.io/ingress.class: public
+        nginx.ingress.kubernetes.io/proxy-body-size: 32m
       enabled: true
       hosts:
       - obj.vreon.net
