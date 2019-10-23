@@ -8,6 +8,8 @@ spec:
   values:
     accessKey: $(envfile://secrets.env#ACCESS_KEY)
     secretKey: $(envfile://secrets.env#SECRET_KEY)
+    image:
+      tag: RELEASE.2019-10-12T01-39-57Z
     ingress:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod

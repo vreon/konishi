@@ -6,5 +6,6 @@ ingress-nginx nginx-0.26.1
 kubeless v1.0.5
 kubernetes v1.16.2
 loki v0.3.0
+minio RELEASE.2019-10-12T01-39-57Z
 minio-helm 2.5.16
 shlink v1.19.0
