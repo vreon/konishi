@@ -1,7 +1,6 @@
 apps
 *secrets.env
 secrets/
-upstream/**/*.yaml
 versions/keys.ini
 versions/new
 versions/old~
