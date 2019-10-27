@@ -22,7 +22,7 @@ asdf install
 ./setup.sh
 ```
 
-#### Checking for updates
+#### Check for updates
 
 Requires [nvchecker](https://github.com/lilydjwg/nvchecker).
 
@@ -31,7 +31,7 @@ nvchecker versions/config.ini      # Check for new versions
 nvtake versions/config.ini <name>  # Mark <name> as updated
 ```
 
-#### Applying updates
+#### Apply updates
 
 ```
 kustomize build --enable_alpha_plugins cluster | kubectl apply -f -
