@@ -15,10 +15,11 @@ Configuration for my home Kubernetes cluster.
 Requires several unreleased kustomize plugins (for now you can look at the
 generators at least :eyes:).
 
+#### Configure tools
+
 ```sh
 asdf install
 ./setup.sh
-kustomize build --enable_alpha_plugins cluster | kubectl apply -f -
 ```
 
 #### Checking for updates
@@ -28,6 +29,12 @@ Requires [nvchecker](https://github.com/lilydjwg/nvchecker).
 ```
 nvchecker versions/config.ini      # Check for new versions
 nvtake versions/config.ini <name>  # Mark <name> as updated
+```
+
+#### Applying updates
+
+```
+kustomize build --enable_alpha_plugins cluster | kubectl apply -f -
 ```
 
 ## Structure
