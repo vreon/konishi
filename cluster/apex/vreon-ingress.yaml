@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: public
+    nginx.ingress.kubernetes.io/temporal-redirect: https://www.jessedubay.com
+  name: vreon
+  namespace: default
+spec:
+  rules:
+  - host: vreon.net
+  - host: www.vreon.net
+  tls:
+  - hosts:
+    - www.vreon.net
+    - vreon.net
+    secretName: vreon-tls
