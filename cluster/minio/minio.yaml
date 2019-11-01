@@ -4,7 +4,7 @@ metadata:
   name: minio
 spec:
   chart: stable/minio
-  version: 2.5.17
+  version: 2.5.18
   values:
     accessKey: $(envfile://secrets.env#ACCESS_KEY)
     secretKey: $(envfile://secrets.env#SECRET_KEY)
