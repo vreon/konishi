@@ -12,9 +12,6 @@ Configuration for my home Kubernetes cluster.
 
 ## Usage
 
-Requires several unreleased kustomize plugins (for now you can look at the
-generators at least :eyes:).
-
 #### Configure tools
 
 ```sh
@@ -32,6 +29,8 @@ nvtake versions/config.ini <name>  # Mark <name> as updated
 ```
 
 #### Apply updates
+
+Requires [discogs/kustomize-plugins](https://github.com/discogs/kustomize-plugins).
 
 ```
 kustomize build --enable_alpha_plugins cluster | kubectl apply -f -
