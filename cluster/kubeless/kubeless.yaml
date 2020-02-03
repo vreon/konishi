@@ -3,5 +3,5 @@ kind: HTTPGenerator
 metadata:
   name: kubeless
 resources:
-- url: https://github.com/kubeless/kubeless/releases/download/v1.0.5/kubeless-v1.0.5.yaml
-  integrity: sha384-/EtUIMoAEtrFXYINji2dlk2Hh2J9wQPUQ08dSQ5ocqLMAzU/WFXThW9Qc0SkUOIs
+- url: https://github.com/kubeless/kubeless/releases/download/v1.0.6/kubeless-v1.0.6.yaml
+  integrity: sha384-Zg0hT46g964S/daKY9yCaKIAzFr8A6QVlU2T49LSjbH2akx+/x/4E+pfzzYBYxks

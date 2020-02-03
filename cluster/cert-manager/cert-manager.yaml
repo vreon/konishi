@@ -3,5 +3,5 @@ kind: HTTPGenerator
 metadata:
   name: cert-manager
 resources:
-- url: https://github.com/jetstack/cert-manager/releases/download/v0.12.0/cert-manager.yaml
-  integrity: sha384-9woLvxBjtMHZ8jhf0lB7/pxYodQIq9SLa0G+cpSNFryc/e34Y0FgpHS3ZacPMrB+
+- url: https://github.com/jetstack/cert-manager/releases/download/v0.13.0/cert-manager.yaml
+  integrity: sha384-qQc6Fxy/gapGNdgYdlfiISI1xH5bxy+5lJvzC8gBThBnU+VtviMpm5aAajr3Rkoj

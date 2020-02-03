@@ -3,5 +3,5 @@ kind: HTTPGenerator
 metadata:
   name: ingress-nginx
 resources:
-- url: https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.26.1/deploy/static/mandatory.yaml
-  integrity: sha384-GBrDTpfbwaTeqPBjxKGqy13IcrFomhCBixCigXHPEFO6JpFzXS2CbN7aZLMf9Vs4
+- url: https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.28.0/deploy/static/mandatory.yaml
+  integrity: sha384-2V8Yw8lwJuAvEbyjzvUBdV1c/ICGVZ85GyoXiHI8CH62cYmtvT6OERq8dCHlAjRm

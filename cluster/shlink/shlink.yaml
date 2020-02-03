@@ -14,7 +14,7 @@ spec:
         app: shlink
     spec:
       containers:
-      - image: shlinkio/shlink:1.20.1
+      - image: shlinkio/shlink:2.0.4
         name: shlink
         command:
         - sh
