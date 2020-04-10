@@ -8,4 +8,4 @@ kubernetes v1.18.1
 loki-helm 0.26.1
 minio-helm 5.0.20
 promtail-helm 0.20.1
-shlink v2.0.4
+shlink v2.1.3
