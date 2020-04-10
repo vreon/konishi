@@ -5,7 +5,6 @@ harbor-helm v1.3.1
 ingress-nginx nginx-0.30.0
 kubeless v1.0.6
 kubernetes v1.18.1
-loki v1.3.0
 loki-helm 0.26.1
 minio RELEASE.2020-01-25T02-50-51Z
 minio-helm 5.0.6
