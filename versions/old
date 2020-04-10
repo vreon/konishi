@@ -1,7 +1,7 @@
 calico v3.13.1
 cert-manager v0.14.2
 external-dns v0.7.1
-harbor-helm v1.3.0
+harbor-helm v1.3.1
 ingress-nginx nginx-0.28.0
 kubeless v1.0.6
 kubernetes v1.18.1
