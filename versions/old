@@ -4,7 +4,7 @@ external-dns v0.5.18
 harbor-helm v1.3.0
 ingress-nginx nginx-0.28.0
 kubeless v1.0.6
-kubernetes v1.17.2
+kubernetes v1.18.1
 loki v1.3.0
 loki-helm 0.25.0
 minio RELEASE.2020-01-25T02-50-51Z
