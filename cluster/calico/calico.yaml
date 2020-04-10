@@ -4,4 +4,4 @@ metadata:
   name: calico
 resources:
 - url: https://docs.projectcalico.org/manifests/calico.yaml
-  integrity: sha384-5u/W3tiImRq7Lb6P4cOsODRK6xfhUoyEfY3yG+mSbQcyxdzNNMGBMf3I/6cqLEK/
+  integrity: sha384-C0djRfJ7w88qJx/kD9FPum+BJa1JRyb/Z/voJ11uT78qmnToVaTo9NFmQj/p6Fom
