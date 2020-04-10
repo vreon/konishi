@@ -1,4 +1,4 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-generators:
-- local-path-provisioner.yaml
+resources:
+- github.com/rancher/local-path-provisioner/deploy?ref=v0.0.12

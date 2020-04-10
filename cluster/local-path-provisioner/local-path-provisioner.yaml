@@ -1,7 +1,0 @@
-apiVersion: platform.discogs.com/v1
-kind: HTTPGenerator
-metadata:
-  name: local-path-provisioner
-resources:
-- url: https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.11/deploy/local-path-storage.yaml
-  integrity: sha384-gHQTS0Y5FA3S37zn8/a8Y8vfIwiLjVbjpHZVQzVQLXF1074Qc01r9A9c8uj3xnv+
