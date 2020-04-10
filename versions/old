@@ -6,8 +6,8 @@ ingress-nginx nginx-0.30.0
 kubeless v1.0.6
 kubernetes v1.18.1
 loki v1.3.0
-loki-helm 0.25.0
+loki-helm 0.26.1
 minio RELEASE.2020-01-25T02-50-51Z
 minio-helm 5.0.6
-promtail-helm 0.17.0
+promtail-helm 0.20.1
 shlink v2.0.4
