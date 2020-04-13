@@ -1,0 +1,33 @@
+apiVersion: platform.discogs.com/v1
+kind: HelmChartGenerator
+metadata:
+  name: bookstack
+spec:
+  chart: stable/bookstack
+  version: 1.2.1
+  values:
+    env:
+      APP_URL: https://wiki.vreon.net
+      GOOGLE_APP_ID: $(envfile://secrets.env#GOOGLE_APP_ID)
+      GOOGLE_APP_SECRET: $(envfile://secrets.env#GOOGLE_APP_SECRET)
+      SESSION_SECURE_COOKIE: 'true'
+    ingress:
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        kubernetes.io/ingress.class: public
+        nginx.ingress.kubernetes.io/proxy-body-size: 32m
+      enabled: true
+      hosts:
+      - wiki.vreon.net
+      tls:
+      - hosts:
+        - wiki.vreon.net
+        secretName: bookstack-tls
+    mariadb:
+      db:
+        password: $(envfile://secrets.env#MARIADB_BOOKSTACK_PASSWORD)
+      master:
+        persistence:
+          enabled: true
+      rootUser:
+        password: $(envfile://secrets.env#MARIADB_ROOT_PASSWORD)

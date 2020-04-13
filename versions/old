@@ -1,3 +1,4 @@
+bookstack-helm 1.2.1
 calico v3.13.1
 cert-manager v0.14.2
 external-dns v0.7.1
