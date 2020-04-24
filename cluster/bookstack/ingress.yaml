@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: public
+    nginx.ingress.kubernetes.io/proxy-body-size: 32m
+  name: bookstack
+spec:
+  rules:
+  - host: wiki.vreon.net
+    http:
+      paths:
+      - backend:
+          serviceName: bookstack
+          servicePort: http
+        path: /
+  tls:
+  - hosts:
+    - wiki.vreon.net
+    secretName: bookstack-tls

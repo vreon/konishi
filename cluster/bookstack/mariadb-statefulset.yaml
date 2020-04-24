@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: bookstack-mariadb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb
+      component: master
+      release: bookstack
+  serviceName: bookstack-mariadb
+  template:
+    metadata:
+      labels:
+        app: mariadb
+        component: master
+        release: bookstack
+    spec:
+      containers:
+      - env:
+        - name: MARIADB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: mariadb-root-password
+              name: bookstack-mariadb
+        - name: MARIADB_USER
+          value: bookstack
+        - name: MARIADB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: mariadb-password
+              name: bookstack-mariadb
+        - name: MARIADB_DATABASE
+          value: bookstack
+        image: docker.io/bitnami/mariadb:10.1.35-debian-9
+        livenessProbe:
+          exec:
+            command:
+            - sh
+            - -c
+            - exec mysqladmin status -uroot -p$MARIADB_ROOT_PASSWORD
+          initialDelaySeconds: 120
+        name: mariadb
+        ports:
+        - containerPort: 3306
+          name: mysql
+          protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - sh
+            - -c
+            - exec mysqladmin status -uroot -p$MARIADB_ROOT_PASSWORD
+          initialDelaySeconds: 15
+        volumeMounts:
+        - mountPath: /bitnami/mariadb
+          name: data
+        - mountPath: /opt/bitnami/mariadb/conf/my.cnf
+          name: config
+          subPath: my.cnf
+      securityContext:
+        fsGroup: 1001
+        runAsUser: 1001
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: bookstack-mariadb
+        name: config
+  volumeClaimTemplates:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 8Gi

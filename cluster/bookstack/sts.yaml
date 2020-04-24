@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: bookstack
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bookstack
+      release: bookstack
+  serviceName: bookstack
+  template:
+    metadata:
+      labels:
+        app: bookstack
+        release: bookstack
+    spec:
+      containers:
+      - env:
+        - name: DB_HOST
+          value: bookstack-mariadb
+        - name: DB_DATABASE
+          value: bookstack
+        - name: DB_USER
+          value: bookstack
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              key: mariadb-password
+              name: bookstack-mariadb
+        - name: APP_URL
+          value: https://wiki.vreon.net
+        - name: GOOGLE_APP_ID
+          valueFrom:
+            secretKeyRef:
+              key: google-app-id
+              name: bookstack
+        - name: GOOGLE_APP_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: google-app-secret
+              name: bookstack
+        - name: SESSION_SECURE_COOKIE
+          value: "true"
+        image: linuxserver/bookstack:v0.29.0-ls87
+        name: bookstack
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /config
+          name: config
+  updateStrategy:
+    type: RollingUpdate
+  volumeClaimTemplates:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: config
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 8Gi
